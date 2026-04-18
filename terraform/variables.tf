@@ -16,6 +16,12 @@ variable "environment" {
   }
 }
 
+variable "default_aws_region" {
+  description = "AWS region for all resources and for the Lambda Bedrock client"
+  type        = string
+  default     = "ap-southeast-1"
+}
+
 variable "bedrock_model_id" {
   description = "Bedrock model ID"
   type        = string

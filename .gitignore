@@ -6,3 +6,8 @@
 logs
 
 # memory
+# see memory/.gitignore 
+
+# lambda
+lambda-deployment.zip
+lambda-package/

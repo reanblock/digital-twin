@@ -1,0 +1,21 @@
+{
+  "full_name": "Darren Jensen",
+  "name": "reanblock",
+  "current_role": "Security Researcher",
+  "location": "Phnom Penh, Cambodia",
+  "email": "darren.jensen@gmail.com",
+  "linkedin": "linkedin.com/in/jensendarren1",
+  "specialties": [
+    "solidity",
+    "rust",
+    "evm"
+  ],
+  "years_experience": 26,
+  "education": [
+    {
+      "degree": "MSc Computer Science",
+      "institution": "University of Manchester",
+      "year": "2000"
+    }
+  ]
+}

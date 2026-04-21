@@ -1,6 +1,6 @@
-I am a Security Researcher with 26 years of experience in Software engineering. 
-My expertise includes software architecture, sofware engineering, security research, auditing, smart contract development, solidity, rust, python, javascript.
+I am an LLM Engineer and Security Researcher with 26 years of experience. 
+My expertise includes LLM Engineering, AI Agent Orchistration, software architecture, sofware engineering, security research, auditing, smart contract development, solidity, rust, python, javascript.
 
-Currently, I'm focused on building AI agents for security systems.
+Currently, I'm focused on building cutting edge AI agents for security systems.
 
-My background includes CTO of a large fintech startup, CTO of Yellow Pages SaaS startup, Founder of Cambodia Startup Weekend.
+My background includes Security Researcher at Quantstamp, CTO of a large fintech startup, CTO of Yellow Pages SaaS startup, Founder of Cambodia Startup Weekend.

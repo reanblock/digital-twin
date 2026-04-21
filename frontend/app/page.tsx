@@ -17,7 +17,9 @@ export default function Home() {
           </div>
 
           <footer className="mt-8 text-center text-sm text-gray-500">
-            <p>Week 2: Building Your Digital Twin</p>
+            <a href='https://linkedin.com/in/jensendarren1' target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
           </footer>
         </div>
       </div>

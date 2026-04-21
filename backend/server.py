@@ -26,14 +26,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize Bedrock client - see Q42 on https://edwarddonner.com/faq if the Region gives you problems
+# Initialize Bedrock client
 bedrock_client = boto3.client(
     service_name="bedrock-runtime", 
-    region_name=os.getenv("DEFAULT_AWS_REGION", "us-east-1")
+    region_name=os.getenv("DEFAULT_AWS_REGION", "ap-southeast-1")
 )
 
-# Bedrock model selection - see Q42 on https://edwarddonner.com/faq for more
-BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "global.amazon.nova-2-lite-v1:0")
+# Bedrock model selection
+BEDROCK_MODEL_ID = os.getenv("BEDROCK_MODEL_ID", "apac.amazon.nova-lite-v1:0")
 
 # Memory storage configuration
 USE_S3 = os.getenv("USE_S3", "false").lower() == "true"

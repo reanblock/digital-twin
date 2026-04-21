@@ -40,6 +40,7 @@ echo "🎯 Applying Terraform..."
 
 API_URL=$(terraform output -raw api_gateway_url)
 FRONTEND_BUCKET=$(terraform output -raw s3_frontend_bucket)
+CLOUDFRONT_DISTRIBUTION_ID=$(terraform output -raw cloudfront_distribution_id)
 CUSTOM_URL=$(terraform output -raw custom_domain_url 2>/dev/null || true)
 
 # 3. Build + deploy frontend
@@ -53,6 +54,14 @@ npm install
 npm run build
 aws s3 sync ./out "s3://$FRONTEND_BUCKET/" --delete
 cd ..
+
+# 3a. Invalidate CloudFront so edge caches pick up the new build
+echo "🔄 Invalidating CloudFront cache ($CLOUDFRONT_DISTRIBUTION_ID)..."
+aws cloudfront create-invalidation \
+  --distribution-id "$CLOUDFRONT_DISTRIBUTION_ID" \
+  --paths "/*" \
+  --query 'Invalidation.Id' \
+  --output text
 
 # 4. Final messages
 echo -e "\n✅ Deployment complete!"

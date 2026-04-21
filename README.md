@@ -16,7 +16,6 @@ uv run uvicorn server:app --reload --port 8000
 
 Check the API health endpoint [here](http://localhost:8000/health).
 
-
 ### Frontend
 
 In a terminal run:
@@ -29,21 +28,24 @@ npm run dev
 
 Then open the application on localhost [here](http://localhost:3000).
 
-## Build and deploy to AWS
+## Deploy to AWS using local script
 
-NOTE: If you push to `main` branch then it will trigger the deploy Github Action which deployes to `dev` environment by default: [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
-
-Alternatively, the following script (the same script that is run in the Github Action) will also deploy the app to a `dev` environment.
+The following script (the same script that is run in the Github Action - see below) will deploy the app to a `dev` and `prod` environments.
 
 ```bash
 ./scripts/deploy.sh dev
+./scripts/deploy.sh prod
 ```
 
 **Dev**  ✅ Deployment complete! https://drrvcr35hhd5x.cloudfront.net
 **Prod** ✅ Deployment complete! https://d3h2dpeuy9vy75.cloudfront.net
 
-## Tear down services in AWS
+## Deploy to AWS using Github Actions 
 
-```bash
-./scripts/destroy.sh dev
-```
+Navigate to the Github Actions page [here](https://github.com/reanblock/ai-saas-twin/actions) and select the "Deploy Digital Twin" workflow.
+
+**NOTE**: If you push a commit to the `main` branch then it will trigger the deploy Github Action which is deployed to `dev` environment by default: [.github/workflows/deploy.yml](.github/workflows/deploy.yml).
+
+## Destroy AWS deployment
+
+Either use the local `./scripts/destroy.sh` script or the Github Action.

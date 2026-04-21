@@ -26,8 +26,11 @@ export default function Home() {
           <footer className="mt-8 text-center text-sm text-gray-500">
             <nav className="p-4">
               <div className="container mx-auto mt-1 flex flex-wrap items-center justify-between gap-4">
-                <p className="text-white mt-1">@ 2026 Reanblock: Solidity &amp; Yul Smart Contract Security Researcher Tutorials</p>
+                <p className="text-white mt-1">@ 2026 Reanblock: LLM Engineer and Security Researcher</p>
                 <ul className="flex gap-4 ml-auto">
+                  <li>
+                    <a className="text-white" href="https://reanblock.com" tabIndex={-1} aria-disabled="true">Home</a>
+                  </li>
                   <li>
                     <a className="text-white" href="https://www.youtube.com/channel/UCsec5JlNrA02iT4826EazTw" tabIndex={-1} aria-disabled="true">Tutorials</a>
                   </li>

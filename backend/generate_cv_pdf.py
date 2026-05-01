@@ -109,11 +109,11 @@ style_title = ParagraphStyle(
     spaceAfter=2,
 )
 
-style_location = ParagraphStyle(
-    "Location",
-    fontName="Helvetica-Oblique",
+style_contact = ParagraphStyle(
+    "Contact",
+    fontName="Helvetica",
     fontSize=9.5,
-    leading=12,
+    leading=13,
     textColor=MUTED,
 )
 
@@ -182,7 +182,7 @@ style_skill = ParagraphStyle(
 class CVData:
     name: str = ""
     title: str = ""
-    location: str = ""
+    contact: str = ""
     summary: list[str] = field(default_factory=list)
     skills: list[str] = field(default_factory=list)
     education: list[tuple[str, str]] = field(default_factory=list)
@@ -234,16 +234,16 @@ def parse_cv(md_text: str) -> CVData:
 
     while i < n and not lines[i].strip():
         i += 1
-    if i < n and lines[i].startswith("## ") and not lines[i][3:].strip().lower() in {
-        "summary", "skills", "education", "certifications", "experience"
-    }:
-        cv.title = lines[i][3:].strip()
+    if i < n and lines[i].strip() and not lines[i].startswith("#"):
+        cv.contact = lines[i].strip()
         i += 1
 
     while i < n and not lines[i].strip():
         i += 1
-    if i < n and lines[i].startswith("*") and lines[i].rstrip().endswith("*"):
-        cv.location = lines[i].strip().strip("*").strip()
+    if i < n and lines[i].startswith("## ") and lines[i][3:].strip().lower() not in {
+        "summary", "skills", "education", "certifications", "experience"
+    }:
+        cv.title = lines[i][3:].strip()
         i += 1
 
     sections: dict[str, list[str]] = {}
@@ -292,12 +292,14 @@ def parse_cv(md_text: str) -> CVData:
 _LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
 _BOLD_RE = re.compile(r"\*\*([^*\n]+)\*\*")
 _ITALIC_RE = re.compile(r"\*([^*\n]+)\*")
+_CODE_RE = re.compile(r"`([^`\n]+)`")
 
 
 def md_inline(text: str) -> str:
     text = text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
     text = _BOLD_RE.sub(r"<b>\1</b>", text)
     text = _ITALIC_RE.sub(r"<i>\1</i>", text)
+    text = _CODE_RE.sub(r'<font face="Courier">\1</font>', text)
     text = _LINK_RE.sub(
         lambda m: f'<link href="{m.group(2)}" color="#2563a8"><u>{m.group(1)}</u></link>',
         text,
@@ -337,7 +339,7 @@ def header_flowable(cv: CVData) -> Flowable:
     text_cells = [
         Paragraph(md_inline(cv.name), style_name),
         Paragraph(md_inline(cv.title), style_title),
-        Paragraph(md_inline(cv.location), style_location),
+        Paragraph(md_inline(cv.contact), style_contact),
     ]
 
     headshot_buf = circular_headshot(HEADSHOT, target_px=600)

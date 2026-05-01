@@ -1,8 +1,8 @@
 # Darren Jensen
 
-## LLM Engineer | Blockchain Engineer | Security Researcher
+*Phnom Penh, Cambodia* | `darren.jensen@gmail.com` | [LinkedIn](https://linkedin.com/in/jensendarren1)
 
-*Phnom Penh, Cambodia*
+## LLM Engineer | Blockchain Engineer | Security Researcher
 
 ## Summary
 

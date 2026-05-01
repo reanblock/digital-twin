@@ -2,6 +2,12 @@
 
 Taken from AI in production course [here](https://github.com/ed-donner/production/blob/main/week2/day4.md#day-4-infrastructure-as-code-with-terraform).
 
+## Production Deployment
+
+My digital twin is deployed and **live in production** [here](https://reanblock.com/chat/).
+
+Alternatively, if you want to simply *read my CV the old school way*, [here is a PDF](./backend/data//cv.pdf).
+
 ## Update CV PDF
 
 Make changes to [cv.md](./backend/data/cv.md) as desired. Then run:

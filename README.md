@@ -2,6 +2,14 @@
 
 Taken from AI in production course [here](https://github.com/ed-donner/production/blob/main/week2/day4.md#day-4-infrastructure-as-code-with-terraform).
 
+## Update CV PDF
+
+Make changes to [cv.md](./backend/data/cv.md) as desired. Then run:
+
+```bash
+uv run backend/generate_cv_pdf.py
+```
+
 ## Local Testing
 
 ### Backend

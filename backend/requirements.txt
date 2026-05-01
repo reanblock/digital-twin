@@ -32,8 +32,6 @@ pydantic==2.13.2
     # via fastapi
 pydantic-core==2.46.2
     # via pydantic
-pypdf==6.10.2
-    # via backend
 python-dateutil==2.9.0.post0
     # via botocore
 python-dotenv==1.2.2

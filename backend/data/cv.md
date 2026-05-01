@@ -36,7 +36,7 @@ The University of Manchester (*Issued Sept 2000*)
 
 ### AI Engineer Production Track: Deploy LLMs & Agents at Scale
 
-Udemy Credential ID (*Issued Apr 2026*) [UC-e9d8f9e8-5ecf-43b2-8047-6518190fc077](https://udemy-certificate.s3.amazonaws.com/image/UC-e9d8f9e8-5ecf-43b2-8047-6518190fc077.jpg?v=1776846140000)
+Udemy Credential ID (*Issued April 2026*) [UC-e9d8f9e8-5ecf-43b2-8047-6518190fc077](https://udemy-certificate.s3.amazonaws.com/image/UC-e9d8f9e8-5ecf-43b2-8047-6518190fc077.jpg?v=1776846140000)
 
 ### AI Engineer Agentic Track: The Complete Agent & MCP Course
 
